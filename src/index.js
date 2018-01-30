@@ -281,7 +281,7 @@ export default class Swipeable extends PureComponent {
       onLeftButtonsActivate(event, gestureState, this);
     }
 
-    if (leftButtonsActivated && hasLeftButtons && isSwipingLeft) {
+    if (leftButtonsActivated && hasLeftButtons && isSwipingLeft && x < leftButtonsActivationDistance) {
       nextLeftButtonsActivated = false;
       onLeftButtonsDeactivate(event, gestureState, this);
     }
@@ -291,7 +291,7 @@ export default class Swipeable extends PureComponent {
       onRightButtonsActivate(event, gestureState, this);
     }
 
-    if (rightButtonsActivated && hasRightButtons && isSwipingRight) {
+    if (rightButtonsActivated && hasRightButtons && isSwipingRight && x > -rightButtonsActivationDistance) {
       nextRightButtonsActivated = false;
       onRightButtonsDeactivate(event, gestureState, this);
     }
